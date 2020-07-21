@@ -4,18 +4,23 @@ def merge(arrA, arrB):
     merged_arr = [0] * elements
 
     # Your code here
+    # initialize pointers for each array
     a, b = 0, 0
 
     for item in range(elements):
+        # if arrA is complete
         if a >= len(arrA):
             merged_arr[item] = arrB[b]
             b += 1
+        # if arrayB is complete
         elif b >= len(arrB):
             merged_arr[item] = arrA[a]
             a += 1
+        # if element in array A is smaller than element in array B
         elif arrA[a] < arrB[b]:
             merged_arr[item] = arrA[a]
             a += 1
+        # if element in array B is smaller than element in array A
         else:
             merged_arr[item] = arrB[b]
             b += 1
@@ -27,10 +32,14 @@ def merge(arrA, arrB):
 
 def merge_sort(arr):
     # Your code here
+    # base case
     if len(arr) > 1:
+        # recursive case
+        # recursively split array until each list has a length of 1
         left = merge_sort(arr[:len(arr) // 2])
         right = merge_sort(arr[len(arr) // 2:])
 
+        # call merge function and pass in sub arrays
         arr = merge(left, right)
     return arr
 
