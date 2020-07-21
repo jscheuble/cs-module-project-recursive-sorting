@@ -1,6 +1,7 @@
 import unittest
 import random
-from sorting import *
+from sorting import merge_sort
+
 
 class RecursiveSortingTests(unittest.TestCase):
     def test_merge_sort(self):
@@ -30,7 +31,7 @@ class RecursiveSortingTests(unittest.TestCase):
 
     #     merge_sort_in_place(arr2, 0, len(arr2)-1)
     #     self.assertEqual(arr2, [])
-        
+
     #     merge_sort_in_place(arr3, 0, len(arr3)-1)
     #     self.assertEqual(arr3, [2])
 

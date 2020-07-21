@@ -1,6 +1,6 @@
 import unittest
 import random
-from searching import *
+from searching import binary_search
 
 
 class RecursiveSortingTests(unittest.TestCase):
